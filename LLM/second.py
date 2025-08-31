@@ -1,10 +1,10 @@
-from langchain_openai import OpenAI
+from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 
 load_dotenv()
 
-llm = OpenAI(model="gpt-4o-mini")
+llm = ChatOpenAI(model="gpt-4o-mini",temperature=1)
 
 result = llm.invoke("What is the capital of Pakistan? Answer should be brief.")
 
-print(result)
+print(result.content)
